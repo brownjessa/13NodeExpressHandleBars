@@ -16,3 +16,9 @@ router.post("/burgers/create", function (req, res) {
     res.redirect("/");
   });
 });
+router.put("/burgers/:id", function (req, res) {
+  burger.update(req.params.id, function (result) {
+    console.log(result);
+    res.sendStatus(200);
+  });
+});
